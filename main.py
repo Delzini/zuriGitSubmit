@@ -16,7 +16,7 @@ def readfile(filename):
 def countwords():
         text = readfile("story.txt")
         split_text = text.split()
-        count = 0
+        count = {}
         print(count)
         for i in split_text:
          if i in count:
