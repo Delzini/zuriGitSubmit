@@ -7,26 +7,20 @@ from posixpath import split
 from pyparsing import Word
 
 
-def readfile(filename):
+def readfile():
     with open("story.txt") as openfile:
         read_file = openfile.read()
         return read_file
-        
-        
-def countwords():
-        text = readfile("story.txt")
-        split_text = text.split()
-        count = {}
-        print(count)
-        for i in split_text:
-         if i in count:
-          count[i] += 1
-        else:
-          count[i] = 1
-    
-          return count
 
-print(countwords())
+        
+
+def countwords():
+        text = readfile()
+        count = {}
+        for i in text.split():
+          count[i] = count.get(i, 0)+1
+        print(count)
+countwords()
           
             
 
